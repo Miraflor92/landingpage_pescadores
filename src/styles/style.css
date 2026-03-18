@@ -1,0 +1,162 @@
+/* Estilo geral do site: cor de fundo e fonte principal*/
+body {
+        background-color: #13293d;
+    font-family: Arial, sans-serif;
+}
+
+/* Estilo do cabeçalho */
+header {
+    /* Imagem de fundo*/
+    background-image: url("img/banner.png") !important;
+    /*Ajusta a imagem: tamanho, posição e repetição*/
+    background-size:cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 50px 0;
+    /*Cor do texto e posição*/
+    color: #e8f1f2;
+    position: relative;
+}
+/*Capa escura sobre o banner*/
+header::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(19, 41, 61, 0.6);
+}
+/*Linha inferior que separa o header do conteudo*/
+header::after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(to right,#1b98e0,#4fb0e8,#a7d8f5);
+}
+
+/*Mantem o conteúdo sobre a capa escura*/
+header .container{
+    position: relative;
+    z-index: 1;
+}
+
+/*Animação para os elementos do cabeçalho*/
+header h1,header h3,header p{
+    animation: fadeIn 2s ease;
+}
+
+/*Animação fade In up do cabeçalho */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/*Estilo para os links do menu*/
+nav a {
+    color: #e8f1f2;
+    margin: 0 15px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 18px;
+    position: relative;
+}
+
+/*Sublinhado dos links do menu*/
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+
+    width: 0%;
+    height: 2px;
+    background-color: #1b98e0;
+    transition: width 0.3s ease;
+}
+
+/*Efeito hover nos links do menu*/
+nav a:hover {
+    color: #1b98e0;
+}
+
+/*Efeito hover no sublinhado dos links do menu*/
+nav a:hover::after {
+    width: 100%;
+}
+
+
+/*Efeito de gradiente para a linha inferior do cabeçalho*/
+.row-gradient {
+    background: radial-gradient(circle, #e8f1f2, #006494);
+    padding: 25px;
+    border-radius: 18px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.4);
+}
+
+/*Efeito de sombra para os cartões*/
+.shadow:hover {
+    transform: translateY(-5px);
+    transition: transform 0.3s;
+}
+
+/*Estilo para o fundo claro dos cartões*/
+.bg-light {
+    background-color: #e8f1f2 !important;
+}
+
+/*Estilo para os cartões personalizados*/
+.card-custom {
+    color: #13293d;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 12px;
+    
+    box-shadow: 
+       0 8px 20px rgba(0,0,0,0.15);
+    transition: all 0.3s ease;
+}
+/*Efeito hover para os cartões personalizados*/
+.card-custom:hover {
+    transform: translateY(-8px) scale(1.02);
+}
+/*Estilo específico para os cartões de cada seção, com gradiente e cores complementares*/
+#sobre .card-custom {
+    background: linear-gradient(135deg, #e8f1f2, #1b98e0);
+    
+}
+
+#habilidades .card-custom {
+    background: linear-gradient(135deg, #1b98e0, #e8f1f2);
+}
+.lista-habilidades{
+    list-style:none;
+    padding-left:0;
+}
+
+.lista-habilidades li{
+    margin-bottom:8px;
+    font-size:16px;
+}
+
+.lista-habilidades i{
+    color:#e8f1f2;
+    margin-right:8px;
+    transition: transform 0.3s;
+}
+.lista-habilidades li:hover i{
+    transform: scale(1.2);
+}
+#experiencia .card-custom {
+    background: linear-gradient(135deg, #e8f1f2, #1b98e0);
+}
+/*Estilo para o rodapé*/
+footer {
+    background-color: #13293d;
+    color: #e8f1f2;
+}
