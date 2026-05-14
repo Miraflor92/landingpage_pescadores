@@ -7,7 +7,7 @@ body {
 /* Estilo do cabeçalho */
 header {
     /* Imagem de fundo*/
-    background-image: url("img/banner.png") !important;
+    background-image: url("img/banner2.jpg") !important;
     /*Ajusta a imagem: tamanho, posição e repetição*/
     background-size:cover;
     background-position: center;
@@ -59,17 +59,18 @@ header h1,header h3,header p{
 }
 
 /*Estilo para os links do menu*/
-nav a {
-    color: #e8f1f2;
-    margin: 0 15px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 18px;
-    position: relative;
+nav button{
+    background:none;
+    border:none;
+    color:#e8f1f2;
+    margin:0 15px;
+    font-weight:600;
+    font-size:18px;
+    position:relative;
 }
 
 /*Sublinhado dos links do menu*/
-nav a::after {
+nav button::after {
     content: "";
     position: absolute;
     left: 0;
@@ -82,12 +83,12 @@ nav a::after {
 }
 
 /*Efeito hover nos links do menu*/
-nav a:hover {
+nav button:hover {
     color: #1b98e0;
 }
 
 /*Efeito hover no sublinhado dos links do menu*/
-nav a:hover::after {
+nav button:hover::after {
     width: 100%;
 }
 
@@ -116,44 +117,143 @@ nav a:hover::after {
     color: #13293d;
     background-color: rgba(255, 255, 255, 0.85);
     border-radius: 12px;
-    
+    max-width: 1000px;
+    margin: auto;
     box-shadow: 
        0 8px 20px rgba(0,0,0,0.15);
     transition: all 0.3s ease;
+}
+.card-custom p{
+    font-size: 17px;
+    line-height: 1.7;
 }
 /*Efeito hover para os cartões personalizados*/
 .card-custom:hover {
     transform: translateY(-8px) scale(1.02);
 }
+.carousel-item{
+    padding: 30px 0;
+}
+.carousel-item .card-custom{
+    min-height: 500px;
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+}
 /*Estilo específico para os cartões de cada seção, com gradiente e cores complementares*/
-#sobre .card-custom {
+#pesca .card-custom {
+    position: relative;
+    overflow: hidden;
+    color: #13293d;
+
     background: linear-gradient(135deg, #e8f1f2, #1b98e0);
-    
+}
+#pesca .card-custom::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background-image: url("img/pesca.jpg");
+    background-size: cover;
+    background-position: center;
+
+    opacity: 0.20;
+
+    z-index: 0;
+}
+#pesca .card-custom * {
+    position: relative;
+    z-index: 1;
 }
 
-#habilidades .card-custom {
-    background: linear-gradient(135deg, #1b98e0, #e8f1f2);
-}
-.lista-habilidades{
-    list-style:none;
-    padding-left:0;
-}
+#sustentabilidade .card-custom {
+    position: relative;
+    overflow: hidden;
+    color: #13293d;
 
-.lista-habilidades li{
-    margin-bottom:8px;
-    font-size:16px;
-}
-
-.lista-habilidades i{
-    color:#e8f1f2;
-    margin-right:8px;
-    transition: transform 0.3s;
-}
-.lista-habilidades li:hover i{
-    transform: scale(1.2);
-}
-#experiencia .card-custom {
     background: linear-gradient(135deg, #e8f1f2, #1b98e0);
+}
+#sustentabilidade .card-custom::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background-image: url("img/sustentabilidad.jpg");
+    background-size: cover;
+    background-position: center;
+
+    opacity: 0.20;
+
+    z-index: 0;
+}
+#sustentabilidade .card-custom * {
+    position: relative;
+    z-index: 1;
+}
+
+
+#entrevistas .card-custom {
+    position: relative;
+    overflow: hidden;
+    color: #13293d;
+
+    background: linear-gradient(135deg, #e8f1f2, #1b98e0);
+}
+#entrevistas .card-custom::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background-image: url("img/entrevista.jpg");
+    background-size: cover;
+    background-position: center;
+
+    opacity: 0.20;
+
+    z-index: 0;
+}
+#entrevistas .card-custom * {
+    position: relative;
+    z-index: 1;
+}
+
+.frase-final h3 {
+    font-weight: bold;
+}
+
+.frase-final p {
+    font-size: 20px;
+}
+.frase-final {
+    color: #e8f1f2;
+    padding: 40px 20px;
+}
+.gallery img{
+    transition: transform 0.3s ease;
+}
+
+.gallery img:hover{
+    transform: scale(1.03);
+}
+.carousel-img{
+    height: 700px;
+    object-fit: cover;
+}
+.carousel-inner{
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+@media(max-width:768px){
+
+    .carousel-img{
+        height: 300px;
+    }
+
 }
 /*Estilo para o rodapé*/
 footer {
